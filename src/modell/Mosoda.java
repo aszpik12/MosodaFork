@@ -35,11 +35,11 @@ public class Mosoda {
     
     public void kiad(String tulNeve){
         int i = 0;
-        while(i < ruhaDb && ruhak[i] != null && !(ruhak[i].getTulNev().equals(tulNeve))){
+        while(ruhak[i] == null || i < ruhaDb && !(ruhak[i].getTulNev().equals(tulNeve))){
             i++;
         }
         if(i < ruhaDb){
-            String tipus = ruhak[i] instanceof Ruha ? "ruhája" : "ingje";
+            String tipus = ruhak[i] instanceof Ruha ? "ruhája" : "inge";
             System.out.println("Kiadva %s %s!".formatted(tulNeve, tipus));
             ruhak[i] = null;
         }else{
@@ -52,18 +52,19 @@ public class Mosoda {
         for (int i = 0; i < ruhaDb; i++) {
             Ruha r = this.ruhak[i];
             if(r != null){
-                ruhak[i] = r.getTulNev();
-                
-                //ruhak[i] += r instanceof Ing ? " ingje " : " ruhája ";
-                String szinIntenzitas = "";
-                if(r instanceof Ing){
-                    ruhak[i] += " ingje ";
-                    szinIntenzitas = " színe " + ((Ing) r).getSzin() + "%";
-                }else{
-                    ruhak[i] += " ruhája ";
-                }
-                ruhak[i] += r.isTiszta() ? "tiszta" : "koszos";
-                ruhak[i] += szinIntenzitas;
+                ruhak[i] = r.toString();
+//                ruhak[i] = r.getTulNev();
+//                
+//                //ruhak[i] += r instanceof Ing ? " ingje " : " ruhája ";
+//                String szinIntenzitas = "";
+//                if(r instanceof Ing){
+//                    ruhak[i] += " ingje ";
+//                    szinIntenzitas = " színe " + ((Ing) r).getSzin() + "%";
+//                }else{
+//                    ruhak[i] += " ruhája ";
+//                }
+//                ruhak[i] += r.isTiszta() ? "tiszta" : "koszos";
+//                ruhak[i] += szinIntenzitas;
             }
         }
         return ruhak;

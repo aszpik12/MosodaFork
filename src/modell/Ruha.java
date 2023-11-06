@@ -24,5 +24,11 @@ public class Ruha {
     public void setTiszta(boolean tiszta) {
         this.tiszta = tiszta;
     }
+
+    @Override
+    public String toString() {
+        return "Ruha{" + "tulNeve=" + tulNeve + ", tiszta=" + tiszta + '}';
+    }
+
     
 }
