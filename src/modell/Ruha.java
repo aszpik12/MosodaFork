@@ -29,6 +29,4 @@ public class Ruha {
     public String toString() {
         return "Ruha{" + "tulNeve=" + tulNeve + ", tiszta=" + tiszta + '}';
     }
-
-    
 }

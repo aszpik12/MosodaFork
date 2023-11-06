@@ -19,7 +19,8 @@ public class Ing extends Ruha{
     @Override
     public String toString() {
         String os = super.toString();
-        return os + "\n\tIng{" + "szinIntenzitas=" + szinIntenzitas + '}';
+        return os + System.lineSeparator() + "\t"
+                + "Ing{" + "szinIntenzitas=" + szinIntenzitas + '}';
     }
 
     
